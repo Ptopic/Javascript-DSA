@@ -20,18 +20,20 @@ by inserting one element at the time in left half where it belongs
  now array is sorted
 */
 
-function swap(arr, i1, i2) {
-	var temp = arr[i1];
-	arr[i1] = arr[i2];
-	arr[i2] = temp;
-}
-
 function insertionSort(arr) {
 	// loop thru array
-	for (var i = 0; i < arr.length - 1; i++) {
-		var secondElement = i + 1;
-		if (arr[secondElement] < arr[i]) swap(arr, i, secondElement);
+	for (var i = 1; i < arr.length; i++) {
+		// store current value in temp variable so we dont have to use swap method
+		var currentElement = arr[i];
+		// example i = 3, j = 2,1,0
+		for (var j = i - 1; j >= 0 && arr[j] > currentElement; j--) {
+			arr[j + 1] = arr[j];
+		}
+		// place temp element and j+1 position
+		arr[j + 1] = currentElement;
+		console.log(arr);
 	}
+	return arr;
 }
 
 console.log(insertionSort([6, 2, 4, 8, 1]));
