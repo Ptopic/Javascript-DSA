@@ -116,4 +116,3 @@ Call stack for mergeSort([10,24,76,73])
     [10]left    merge   [24]right        [76]left    merge    [73]right
 mergeSort([10])   mergeSort([24])      mergeSort([76])   mergeSort([73])
 */
-
